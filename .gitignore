@@ -3,6 +3,7 @@
 nbproject
 /var/*
 !/var/labels
+/vendor
 !/public/.htaccess
 !/public/typo3conf
 /public/typo3conf/*
