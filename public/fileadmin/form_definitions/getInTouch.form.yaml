@@ -1,0 +1,57 @@
+
+renderingOptions:
+  submitButtonLabel: Submit
+type: Form
+identifier: getInTouch
+label: 'Get In Touch'
+prototypeName: standard
+finishers:
+  -
+    options:
+      message: "Vielen Dank!\n\nWir haben Ihre Anfrage erfolgreich erhalten und werden sie an unsere Management-Abteilung weiterleiten.\nSeien Sie also bitte vorsichtig, sie werden Ihnen in zwei Arbeitstagen wieder antworten.\n\nResturant Management Abteilung\nRao Faraz Shakeel"
+      contentElementUid: ''
+    identifier: Confirmation
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-1
+    label: 'Contact Form'
+    renderables:
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-1
+        label: ''
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'First Name'
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-2
+        label: ''
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Last Name'
+      -
+        defaultValue: ''
+        type: Email
+        identifier: email-1
+        label: ''
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Email
+        validators:
+          -
+            identifier: EmailAddress
+      -
+        defaultValue: ''
+        type: Textarea
+        identifier: textarea-1
+        label: ''
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Write your Query'

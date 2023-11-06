@@ -1,0 +1,15 @@
+.DS_Store
+.idea
+nbproject
+/var/*
+!/var/labels
+/vendor
+!/public/.htaccess
+!/public/typo3conf
+/public/typo3conf/*
+!/public/typo3conf/LocalConfiguration.php
+!/public/typo3conf/AdditionalConfiguration.php
+/typo3temp/
+/typo3conf/l10n/
+/typo3conf/temp_CACHED_*
+/typo3/sysext/core/Build/Composer
