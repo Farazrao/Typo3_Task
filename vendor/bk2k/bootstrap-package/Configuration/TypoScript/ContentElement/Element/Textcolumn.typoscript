@@ -1,0 +1,6 @@
+tt_content.textcolumn >
+# CTYPE: TEXTCOLUMN
+tt_content.textcolumn =< lib.contentElement
+tt_content.textcolumn {
+    templateName = Textcolumn
+}

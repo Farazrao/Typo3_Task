@@ -1,0 +1,6 @@
+tt_content.external_media >
+# CTYPE: BOOTSTRAP PACKAGE EXTERNAL MEDIA
+tt_content.external_media =< lib.contentElement
+tt_content.external_media {
+    templateName = ExternalMedia
+}

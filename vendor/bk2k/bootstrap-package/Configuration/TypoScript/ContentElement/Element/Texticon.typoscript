@@ -1,0 +1,15 @@
+tt_content.texticon >
+# CTYPE: BOOTSTRAP PACKAGE TEXTICON
+tt_content.texticon =< lib.contentElement
+tt_content.texticon {
+    templateName = Texticon
+    dataProcessing {
+        1628754217 = BK2K\BootstrapPackage\DataProcessing\IconsDataProcessor
+        1628754217 {
+            iconSet.field = icon_set
+            iconIdentifier.field = icon
+            iconFileFieldName = icon_file
+            as = icon
+        }
+    }
+}

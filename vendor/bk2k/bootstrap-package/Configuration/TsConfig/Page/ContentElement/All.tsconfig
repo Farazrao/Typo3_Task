@@ -1,0 +1,2 @@
+@import 'EXT:bootstrap_package/Configuration/TsConfig/Page/ContentElement/Categories.tsconfig'
+@import 'EXT:bootstrap_package/Configuration/TsConfig/Page/ContentElement/Element/*.tsconfig'

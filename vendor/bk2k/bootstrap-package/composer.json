@@ -1,0 +1,147 @@
+{
+    "name": "bk2k/bootstrap-package",
+    "type": "typo3-cms-extension",
+    "description": "Bootstrap Package delivers a full configured frontend theme for TYPO3, based on the Bootstrap CSS Framework.",
+    "keywords": [
+        "TYPO3 CMS",
+        "introduction",
+        "sitepackage",
+        "bootstrap",
+        "responsive",
+        "frontend",
+        "theme",
+        "web"
+    ],
+    "homepage": "https://www.bootstrap-package.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Benjamin Kott",
+            "email": "info@bk2k.info",
+            "homepage": "http://www.bk2k.info/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.4.0",
+        "ext-PDO": "*",
+        "ext-dom": "*",
+        "ext-filter": "*",
+        "ext-hash": "*",
+        "ext-json": "*",
+        "ext-libxml": "*",
+        "ext-simplexml": "*",
+        "scssphp/scssphp": "^1.8.1",
+        "typo3/cms-backend": "^11.5 || ^12.1 || 12.*.*@dev",
+        "typo3/cms-core": "^11.5 || ^12.1 || 12.*.*@dev",
+        "typo3/cms-extbase": "^11.5 || ^12.1 || 12.*.*@dev",
+        "typo3/cms-extensionmanager": "^11.5 || ^12.1 || 12.*.*@dev",
+        "typo3/cms-fluid": "^11.5 || ^12.1 || 12.*.*@dev",
+        "typo3/cms-frontend": "^11.5 || ^12.1 || 12.*.*@dev",
+        "typo3/cms-install": "^11.5 || ^12.1 || 12.*.*@dev",
+        "typo3/cms-rte-ckeditor": "^11.5 || ^12.1 || 12.*.*@dev",
+        "typo3/cms-seo": "^11.5 || ^12.1 || 12.*.*@dev"
+    },
+    "require-dev": {
+        "b13/container": "^2.0",
+        "bk2k/demo-package": "@dev",
+        "bk2k/extension-helper": "^2.0",
+        "friendsofphp/php-cs-fixer": "^3.14",
+        "friendsoftypo3/phpstan-typo3": "^0.9",
+        "overtrue/phplint": "^3.2 || ^4.3 || ^5.3",
+        "phpstan/phpstan": "^1.7",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.1",
+        "phpstan/phpstan-strict-rules": "^1.2",
+        "typo3/cms-belog": "^11.5 || ^12.1 || 12.*.*@dev",
+        "typo3/cms-felogin": "^11.5 || ^12.1 || 12.*.*@dev",
+        "typo3/cms-filelist": "^11.5 || ^12.1 || 12.*.*@dev",
+        "typo3/cms-form": "^11.5 || ^12.1 || 12.*.*@dev",
+        "typo3/cms-indexed-search": "^11.5 || ^12.1 || 12.*.*@dev",
+        "typo3/cms-info": "^11.5 || ^12.1 || 12.*.*@dev",
+        "typo3/cms-lowlevel": "^11.5 || ^12.1 || 12.*.*@dev",
+        "typo3/cms-tstemplate": "^11.5 || ^12.1 || 12.*.*@dev",
+        "typo3/cms-workspaces": "^11.5 || ^12.1 || 12.*.*@dev",
+        "typo3/testing-framework": "^7.0.0 || ^8.0.0"
+    },
+    "config": {
+        "bin-dir": ".build/bin",
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "vendor-dir": ".build/vendor",
+        "allow-plugins": {
+            "typo3/class-alias-loader": true,
+            "typo3/cms-composer-installers": true
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-BP_13_0": "13.0.x-dev"
+        },
+        "typo3/cms": {
+            "extension-key": "bootstrap_package",
+            "web-dir": ".build/public"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "BK2K\\BootstrapPackage\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BK2K\\BootstrapPackage\\Tests\\": "Tests"
+        }
+    },
+    "repositories": {
+        "tests": {
+            "type": "path",
+            "url": "Tests/Packages/*"
+        }
+    },
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "[ -d .build/public/_assets ] || mkdir -p .build/public/typo3conf/ext/",
+            "[ -d .build/public/_assets ] || [ -L .build/public/typo3conf/ext/bootstrap_package ] || ln -snvf ../../../../. .build/public/typo3conf/ext/bootstrap_package"
+        ],
+        "cgl": [
+            "php-cs-fixer --diff -v fix"
+        ],
+        "cgl:ci": [
+            "php-cs-fixer --diff -v --dry-run fix"
+        ],
+        "changelog": [
+            "extension-helper changelog:create"
+        ],
+        "phpstan": [
+            "phpstan analyze --configuration Build/phpstan.neon"
+        ],
+        "phpstan:baseline": [
+            "phpstan analyze --configuration Build/phpstan.neon --generate-baseline Build/phpstan-baseline.neon"
+        ],
+        "set-version": [
+            "extension-helper version:set"
+        ],
+        "test": [
+            "@test:php:lint",
+            "@test:php:unit",
+            "@test:php:functional"
+        ],
+        "test:php:functional": [
+            "phpunit -c Build/phpunit-functional.xml"
+        ],
+        "test:php:lint": [
+            "phplint"
+        ],
+        "test:php:unit": [
+            "phpunit -c Build/phpunit-unit.xml"
+        ]
+    },
+    "support": {
+        "issues": "https://github.com/benjaminkott/bootstrap_package/issues",
+        "wiki": "https://github.com/benjaminkott/bootstrap_package/wiki",
+        "source": "https://github.com/benjaminkott/bootstrap_package",
+        "docs": "https://docs.typo3.org/p/bk2k/bootstrap-package/main/en-us/"
+    }
+}

@@ -1,0 +1,6 @@
+tt_content.text >
+# CTYPE: TEXT
+tt_content.text =< lib.contentElement
+tt_content.text {
+    templateName = Text
+}

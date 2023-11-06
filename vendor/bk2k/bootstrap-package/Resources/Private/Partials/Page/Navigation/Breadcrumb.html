@@ -1,0 +1,46 @@
+<f:if condition="{theme.breadcrumb.enable}">
+    <f:if condition="{breadcrumb}">
+        <nav class="breadcrumb-section" aria-label="{f:translate(key: 'breadcrumb.label', extensionName: 'bootstrap_package')}">
+            <div class="container">
+                <p class="visually-hidden" id="breadcrumb">{f:translate(key: 'breadcrumb', extensionName: 'bootstrap_package')}</p>
+                <ol class="breadcrumb">
+                    <f:for each="{breadcrumb}" as="item" iteration="iterator">
+                        <f:variable name="isCurrent" value="0" />
+                        <f:if condition="{item.current} && {breadcrumbExtendedValue} == '' && {iterator.isLast}">
+                            <f:variable name="isCurrent" value="1" />
+                        </f:if>
+                        <li class="breadcrumb-item{f:if(condition: isCurrent, then: ' active')}"{f:if(condition: isCurrent, then: ' aria-current="page"')}>
+                            <f:if condition="{isCurrent}">
+                                <f:then>
+                                    <f:render section="BreadcrumbTitle" arguments="{item: item, theme: theme}" />
+                                </f:then>
+                                <f:else>
+                                    <a class="breadcrumb-link" href="{item.link}"{f:if(condition: '{item.target}', then: ' target="{item.target}"')}{f:if(condition: '{item.target} == "_blank"', then: ' rel="noopener noreferrer"')} title="{item.title}">
+                                        <f:render section="BreadcrumbTitle" arguments="{item: item, theme: theme}" />
+                                    </a>
+                                </f:else>
+                            </f:if>
+                        </li>
+                    </f:for>
+                    <f:if condition="{breadcrumbExtendedValue}">
+                        <li class="breadcrumb-item active" aria-current="page">
+                            <span class="breadcrumb-link-title">
+                                <span class="breadcrumb-text">{breadcrumbExtendedValue}</span>
+                            </span>
+                        </li>
+                    </f:if>
+                </ol>
+            </div>
+        </nav>
+    </f:if>
+</f:if>
+<f:section name="BreadcrumbTitle">
+    <span class="breadcrumb-link-title">
+        <f:if condition="{theme.breadcrumb.icon.enable} && {item.icon}">
+            <span class="breadcrumb-icon">
+                <bk2k:icon icon="{item.icon}" height="{theme.breadcrumb.icon.height}" width="{theme.breadcrumb.icon.width}" />
+            </span>
+        </f:if>
+        <span class="breadcrumb-text">{item.title}</span>
+    </span>
+</f:section>

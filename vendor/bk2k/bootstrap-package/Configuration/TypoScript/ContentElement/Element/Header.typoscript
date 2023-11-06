@@ -1,0 +1,6 @@
+tt_content.header >
+# CTYPE: HEADER
+tt_content.header =< lib.contentElement
+tt_content.header {
+    templateName = Header
+}

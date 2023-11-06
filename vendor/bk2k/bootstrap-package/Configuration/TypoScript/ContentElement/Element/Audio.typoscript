@@ -1,0 +1,12 @@
+tt_content.audio >
+# CTYPE: AUDIO
+tt_content.audio =< lib.contentElement
+tt_content.audio {
+    templateName = Audio
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        10 {
+            references.fieldName = assets
+        }
+    }
+}

@@ -1,0 +1,14 @@
+tt_content.listgroup >
+# CTYPE: BOOTSTRAP PACKAGE LISTGROUP
+tt_content.listgroup =< lib.contentElement
+tt_content.listgroup {
+    templateName = ListGroup
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\SplitProcessor
+        10 {
+            fieldName = bodytext
+            removeEmptyEntries = 1
+            as = items
+        }
+    }
+}

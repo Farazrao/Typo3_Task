@@ -1,0 +1,2 @@
+# FORM FRAMEWORK
+@import 'EXT:form/Configuration/TypoScript/setup.typoscript'
