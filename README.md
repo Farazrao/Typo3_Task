@@ -25,25 +25,25 @@ Before getting started, ensure you have the following software installed on your
 ## Change to the project directory:
 -- cd <project_directory>
 ## Create a DDev configuration file for your project:
--- DDev config
+-- **DDev config**
 Follow the prompts to configure your project. You can choose the default settings for a TYPO3 project.
 
 ## Start the ddev environment:
--- ddev start
+-- **ddev start**
 This command will set up your development environment, including a web server, PHP, and a database server.
 
 ## Install TYPO3 and dependencies using Composer:
--- ddev composer install
+--** ddev composer install**
 Access your TYPO3 project in your web browser at http://<project_name>.ddev.site. TYPO3's installation process should start automatically.
 
 Follow the TYPO3 installation process and provide the necessary information for your project.
 
 ## Usage
 You can start working on your TYPO3 project using Docker and ddev. To start your development environment, run:
--- ddev start
+-- **ddev start**
 To stop the development environment when you're done, use:
 
--- ddev stop
+-- **ddev stop**
 
 
 ## Prerequisites
@@ -55,7 +55,7 @@ To stop the development environment when you're done, use:
 ## Accessing the Database
 To access the database container created by ddev, you can use the following command:
 
--- ddev describe db
+-- **ddev describe db**
 This command will provide you with information on the database container, including the host, port, username, and password.
 
 
@@ -99,4 +99,6 @@ to be used for development.
 -- ddev documentation: https://ddev.readthedocs.io/en/stable/
 ## License
 
-GPL-2.0 or later
+**GPL-2.0 or later**
+
+## Typo3 Version 12
